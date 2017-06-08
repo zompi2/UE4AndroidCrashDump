@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- zompi 2014-2017 all rights reserverd -->
+<root xmlns:android="http://schemas.android.com/apk/res/android">
+  <gameActivityImportAdditions>
+    <insert>
+      import android.os.Environment;
+    </insert>
+  </gameActivityImportAdditions>
+  <gameActivityClassAdditions>
+    <insert>
+      private native void setUpBreakpad(String filepath);
+    </insert>
+  </gameActivityClassAdditions>
+  <gameActivityOnCreateAdditions>
+    <insert>
+      try {
+        String crashDumpDirectoryPath = Environment.getExternalStorageDirectory().getPath() + "/UE4CrashDumps/" + getPackageName() + "/";
+        File crashDumpDir = new File(crashDumpDirectoryPath);
+        if (crashDumpDir.exists() == false) {
+          crashDumpDir.mkdirs();
+        }
+        setUpBreakpad(crashDumpDirectoryPath);
+      } catch (Exception e) {
+        Log.debug("Can't create a dir for crash dump logs. Exception: " + e);
+      }
+    </insert>
+  </gameActivityOnCreateAdditions>
+</root>
+
