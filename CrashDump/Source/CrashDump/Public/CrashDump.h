@@ -1,4 +1,4 @@
-// zompi 2014-2017 all rights reserverd
+// (c) 2017 Damian Nowakowski
 
 #pragma once
 

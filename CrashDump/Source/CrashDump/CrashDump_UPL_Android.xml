@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- zompi 2014-2017 all rights reserverd -->
+<!-- (c) 2017 Damian Nowakowski -->
 <root xmlns:android="http://schemas.android.com/apk/res/android">
   <gameActivityImportAdditions>
     <insert>
